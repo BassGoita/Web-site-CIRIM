@@ -1,0 +1,70 @@
+<!--
+    services.html — Détail des 4 services proposés par CIRIM.
+    Chaque service est présenté dans un bloc avec un titre
+    et une description un peu plus complète que sur l'accueil.
+-->
+{% extends "base.html" %}
+
+{% block titre %}Services — {{ coord.nom_entreprise }}{% endblock %}
+
+{% block contenu %}
+
+<section class="section">
+    <div class="conteneur">
+        <h1>Nos services</h1>
+        <p class="intro-page">
+            CIRIM propose un accompagnement complet en gestion des risques
+            industriels (HSE) et en maintenance, adapté aux entreprises qui
+            n'ont pas de service interne structuré.
+        </p>
+
+        <div class="liste-services">
+
+            <article class="service">
+                <h2>Accompagnement à la certification ISO 9001, 14001, 45001</h2>
+                <p>
+                    Préparation et suivi de la mise en conformité avec les normes
+                    ISO 9001 (qualité), 14001 (environnement) et 45001 (santé et
+                    sécurité au travail) : diagnostic initial, mise en place de la
+                    documentation nécessaire, accompagnement jusqu'à l'audit de
+                    certification.
+                </p>
+            </article>
+
+            <article class="service">
+                <h2>Déploiement, création et suivi de GMAO</h2>
+                <p>
+                    Mise en place ou amélioration de votre Gestion de Maintenance
+                    Assistée par Ordinateur : structuration des données
+                    équipements, création de plans de maintenance préventive,
+                    suivi des interventions et des indicateurs de performance.
+                </p>
+            </article>
+
+            <article class="service">
+                <h2>Mise à disposition de consultants HSE et maintenance</h2>
+                <p>
+                    Renfort ponctuel ou récurrent de vos équipes par des
+                    consultants expérimentés (coordination HSE, animation
+                    sécurité, coordination de maintenance) pour répondre à vos
+                    besoins opérationnels sur le terrain.
+                </p>
+            </article>
+
+            <article class="service">
+                <h2>Formations</h2>
+                <p>
+                    Sessions de formation et de sensibilisation sur la
+                    maintenance industrielle, la prévention des risques
+                    industriels, ainsi que la santé et la sécurité du
+                    personnel.
+                </p>
+            </article>
+
+        </div>
+
+        <p class="voir-plus"><a href="{{ url_for('contact') }}">Discutons de votre besoin →</a></p>
+    </div>
+</section>
+
+{% endblock %}

@@ -1,0 +1,74 @@
+<!--
+    base.html
+    ------------------------------------------------------------
+    Gabarit commun à toutes les pages du site : il contient le
+    menu de navigation, le pied de page, et un emplacement pour
+    le contenu que chaque page (index.html, services.html,
+    apropos.html, contact.html) vient remplir avec son propre
+    contenu en héritant de ce gabarit.
+    Cela évite de répéter le menu et le pied de page partout.
+    ------------------------------------------------------------
+-->
+<!doctype html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <!-- Cette balise est indispensable pour un bon affichage sur mobile -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block titre %}{{ coord.nom_entreprise }} — {{ coord.nom_complet }}{% endblock %}</title>
+    <link rel="icon" type="image/png" href="{{ url_for('static', filename='img/favicon.png') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+
+    <!-- ============ EN-TÊTE ET MENU DE NAVIGATION ============ -->
+    <header class="entete">
+        <div class="entete-conteneur">
+            <a href="{{ url_for('accueil') }}" class="logo">
+                <img src="{{ url_for('static', filename='img/logo.png') }}"
+                     alt="{{ coord.nom_entreprise }} — {{ coord.nom_complet }}">
+            </a>
+
+            <!--
+                Astuce 100% CSS (sans JavaScript) pour le menu mobile :
+                une case à cocher invisible (#menu-toggle) est activée/désactivée
+                quand on clique sur le bouton "burger". Le CSS affiche ou cache
+                le menu selon l'état de cette case. Voir static/css/style.css.
+            -->
+            <input type="checkbox" id="menu-toggle" class="menu-toggle-case">
+            <label for="menu-toggle" class="menu-bouton" aria-label="Ouvrir le menu">
+                <span></span><span></span><span></span>
+            </label>
+
+            <nav class="menu">
+                <a href="{{ url_for('accueil') }}" class="{{ 'actif' if page_active == 'accueil' else '' }}">Accueil</a>
+                <a href="{{ url_for('services') }}" class="{{ 'actif' if page_active == 'services' else '' }}">Services</a>
+                <a href="{{ url_for('a_propos') }}" class="{{ 'actif' if page_active == 'apropos' else '' }}">À propos</a>
+                <a href="{{ url_for('contact') }}" class="{{ 'actif' if page_active == 'contact' else '' }}">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- ============ CONTENU PROPRE À CHAQUE PAGE ============ -->
+    <main>
+        {% block contenu %}{% endblock %}
+    </main>
+
+    <!-- ============ PIED DE PAGE ============ -->
+    <footer class="pied-de-page">
+        <div class="pied-conteneur">
+            <div>
+                <strong>{{ coord.nom_entreprise }}</strong><br>
+                {{ coord.nom_complet }}
+            </div>
+            <div>
+                <a href="tel:{{ coord.telephone_lien }}">{{ coord.telephone }}</a><br>
+                <a href="mailto:{{ coord.email }}">{{ coord.email }}</a><br>
+                {{ coord.adresse }}
+            </div>
+        </div>
+        <p class="copyright">&copy; {{ coord.nom_entreprise }} : 2026 </p>
+    </footer>
+
+</body>
+</html>

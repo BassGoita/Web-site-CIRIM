@@ -1,0 +1,19 @@
+# .gitignore
+# Fichiers et dossiers que Git ne doit pas suivre :
+# environnement virtuel Python, fichiers temporaires,
+# et configuration de l'éditeur (PyCharm).
+
+# Environnement virtuel Python
+.venv/
+venv/
+env/
+
+# Fichiers Python compilés
+__pycache__/
+*.pyc
+
+# Configuration de l'éditeur PyCharm
+.idea/
+
+# Fichiers système
+.DS_Store

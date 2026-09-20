@@ -1,0 +1,70 @@
+<!--
+    index.html — Page d'accueil.
+    Présente rapidement CIRIM, met en avant les 4 services
+    principaux (en résumé, le détail est sur la page Services)
+    et incite le visiteur à prendre contact.
+-->
+{% extends "base.html" %}
+
+{% block contenu %}
+
+<!-- Grande bannière d'introduction -->
+<section class="bandeau-heros">
+    <div class="conteneur">
+        <h1>Conseil en Ingénierie<br>Risques Industriels et Maintenance</h1>
+        <p class="sous-titre">
+            CIRIM accompagne les entreprises industrielles, tertiaires et ferroviaires
+            dans la maîtrise de leurs risques (HSE) et l'optimisation de leur maintenance.
+        </p>
+        <a href="{{ url_for('contact') }}" class="bouton">Nous contacter</a>
+    </div>
+</section>
+
+<!-- Aperçu des 4 services principaux -->
+<section class="section">
+    <div class="conteneur">
+        <h2>Nos domaines d'intervention</h2>
+        <div class="grille-cartes">
+
+            <div class="carte">
+                <h3>Certification ISO</h3>
+                <p>Accompagnement à la certification ISO 9001, 14001 et 45001.</p>
+            </div>
+
+            <div class="carte">
+                <h3>GMAO</h3>
+                <p>Déploiement, création et suivi de votre Gestion de Maintenance
+                    Assistée par Ordinateur.</p>
+            </div>
+
+            <div class="carte">
+                <h3>Consultants HSE &amp; Maintenance</h3>
+                <p>Mise à disposition de consultants pour renforcer vos équipes
+                    sécurité et maintenance.</p>
+            </div>
+
+            <div class="carte">
+                <h3>Formations</h3>
+                <p>Formations sur la maintenance, les risques industriels et la
+                    santé-sécurité du personnel.</p>
+            </div>
+
+        </div>
+        <p class="voir-plus"><a href="{{ url_for('services') }}">Voir le détail de nos services →</a></p>
+    </div>
+</section>
+
+<!-- Pourquoi choisir CIRIM -->
+<section class="section section-alt">
+    <div class="conteneur">
+        <h2>Pourquoi choisir CIRIM ?</h2>
+        <p>
+            Fondé par Sekou Amadou GOITA, fort d'expériences de terrain chez Veolia,
+            Doka et SOCOTEC, CIRIM propose un accompagnement technique, réglementaire
+            et opérationnel accessible et adapté aux réalités des entreprises
+            industrielles au Mali.
+        </p>
+    </div>
+</section>
+
+{% endblock %}

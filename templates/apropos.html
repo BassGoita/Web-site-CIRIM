@@ -1,0 +1,91 @@
+<!--
+    apropos.html — Présentation de l'entreprise et de son fondateur.
+-->
+{% extends "base.html" %}
+
+{% block titre %}À propos — {{ coord.nom_entreprise }}{% endblock %}
+
+{% block contenu %}
+
+<section class="section">
+    <div class="conteneur conteneur-etroit">
+        <h1>À propos de {{ coord.nom_entreprise }}</h1>
+
+        <p>
+            CIRIM : Conseil en Ingénierie Risques Industriels et Maintenance
+            est une entreprise de conseil opérationnel spécialisée dans
+            l'accompagnement des secteurs industriels, tertiaires et
+            ferroviaires. Notre rôle est d'aider nos clients à maîtriser les
+            risques liés à leur activité, notamment à travers des missions en
+            Santé, Sécurité et Environnement (HSE) ainsi que sur la
+            maintenance de leurs équipements.
+        </p>
+
+    </div>
+</section>
+
+<!-- Le fondateur : photo + biographie côte à côte (s'empilent sur mobile) -->
+<section class="section section-alt">
+    <div class="conteneur">
+        <div class="profil-fondateur">
+            <img class="photo-fondateur"
+                 src="{{ url_for('static', filename='img/fondateur-portrait.jpg') }}"
+                 alt="{{ coord.fondateur }}, fondateur de {{ coord.nom_entreprise }}">
+            <div class="bio-fondateur">
+                <h2>Le fondateur</h2>
+                <p>
+                    {{ coord.fondateur }} est diplômé en Risques Industriels et
+                    Maintenance, avec des expériences concrètes en environnement
+                    industriel acquises notamment chez Veolia, Doka et SOCOTEC :
+                    coordination d'activités sur site, supervision d'interventions
+                    techniques, application stricte des règles HSE, planification des
+                    opérations et suivi de prestataires.
+                </p>
+                <p>
+                    Ce parcours de terrain lui a permis de développer une
+                    compréhension fine des enjeux liés à la sécurité et à la
+                    fiabilité des installations industrielles, ainsi qu'une réelle
+                    capacité à accompagner des équipes pluridisciplinaires.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Galerie : quelques photos du fondateur sur le terrain et en entreprise -->
+<section class="section">
+    <div class="conteneur">
+        <h2>Sur le terrain</h2>
+        <div class="galerie-photos">
+            <figure>
+                <img src="{{ url_for('static', filename='img/fondateur-terrain.jpg') }}"
+                     alt="{{ coord.fondateur }} lors d'un briefing sécurité sur un site industriel">
+                <figcaption>Briefing sécurité sur site industriel</figcaption>
+            </figure>
+            <figure>
+                <img src="{{ url_for('static', filename='img/fondateur-ingelec.jpg') }}"
+                     alt="{{ coord.fondateur }} en mission chez Ingelec">
+                <figcaption>En mission terrain</figcaption>
+            </figure>
+            <figure>
+                <img src="{{ url_for('static', filename='img/fondateur-hestim.jpg') }}"
+                     alt="{{ coord.fondateur }} lors d'un événement professionnel">
+                <figcaption>Événement professionnel</figcaption>
+            </figure>
+        </div>
+    </div>
+</section>
+
+<section class="section section-alt">
+    <div class="conteneur conteneur-etroit">
+        <h2>Notre mission</h2>
+        <p>
+            Accompagner les structures industrielles dans la prévention des
+            risques, l'optimisation de la maintenance et la mise en
+            conformité réglementaire, en leur apportant une expertise
+            accessible et personnalisée.
+        </p>
+    </div>
+</section>
+
+{% endblock %}

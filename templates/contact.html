@@ -1,0 +1,51 @@
+<!--
+    contact.html — Page de contact.
+    Demande explicite du client : uniquement les coordonnées,
+    pas de formulaire et pas de base de données. Les liens
+    "tel:", "https://wa.me/" et "mailto:" permettent au visiteur
+    d'appeler, écrire sur WhatsApp ou envoyer un e-mail en un clic
+    depuis son téléphone.
+-->
+{% extends "base.html" %}
+
+{% block titre %}Contact — {{ coord.nom_entreprise }}{% endblock %}
+
+{% block contenu %}
+
+<section class="section">
+    <div class="conteneur conteneur-etroit">
+        <h1>Contactez-nous</h1>
+        <p class="intro-page">
+            Une question, un projet ? N'hésitez pas à nous joindre directement
+            par téléphone, WhatsApp ou e-mail.
+        </p>
+
+        <div class="fiche-contact">
+
+            <div class="ligne-contact">
+                <span class="etiquette">Téléphone</span>
+                <a href="tel:{{ coord.telephone_lien }}">{{ coord.telephone }}</a>
+            </div>
+
+            <div class="ligne-contact">
+                <span class="etiquette">WhatsApp</span>
+                <a href="https://wa.me/{{ coord.whatsapp_lien }}" target="_blank" rel="noopener">
+                    Discuter sur WhatsApp
+                </a>
+            </div>
+
+            <div class="ligne-contact">
+                <span class="etiquette">E-mail</span>
+                <a href="mailto:{{ coord.email }}">{{ coord.email }}</a>
+            </div>
+
+            <div class="ligne-contact">
+                <span class="etiquette">Adresse</span>
+                <span>{{ coord.adresse }}</span>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+{% endblock %}
