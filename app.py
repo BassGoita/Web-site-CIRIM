@@ -35,37 +35,37 @@ def accueil():
     return render_template("index.html", page_active="accueil", coord=COORDONNEES)
 
 
-@app.route("/services")
+@app.route("/services/")
 def services():
     """Page présentant les services proposés par CIRIM."""
     return render_template("services.html", page_active="services", coord=COORDONNEES)
 
 
-@app.route("/a-propos")
+@app.route("/a-propos/")
 def a_propos():
     """Page de présentation de l'entreprise et de son fondateur."""
     return render_template("apropos.html", page_active="apropos", coord=COORDONNEES)
 
 
-@app.route("/contact")
+@app.route("/contact/")
 def contact():
     """Page de contact : coordonnées uniquement, pas de formulaire."""
     return render_template("contact.html", page_active="contact", coord=COORDONNEES)
 
 
-@app.route("/politique-de-confidentialite")
+@app.route("/politique-de-confidentialite/")
 def confidentialite():
     """Politique de confidentialité (mentions RGPD/loi malienne)."""
     return render_template("confidentialite.html", page_active="confidentialite", coord=COORDONNEES)
 
 
-@app.route("/conditions-generales-utilisation")
+@app.route("/conditions-generales-utilisation/")
 def cgu():
     """Conditions générales d'utilisation (avec mentions légales)."""
     return render_template("cgu.html", page_active="cgu", coord=COORDONNEES)
 
 
-@app.route("/politique-de-cookies")
+@app.route("/politique-de-cookies/")
 def cookies():
     """Politique de cookies : le site n'en utilise aucun."""
     return render_template("cookies.html", page_active="cookies", coord=COORDONNEES)

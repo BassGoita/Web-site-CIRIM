@@ -129,9 +129,32 @@ changées facilement :
 --couleur-accent: #e2711d;       /* orange */
 ```
 
-## Mettre le site en ligne
+## Mettre le site en ligne (gratuitement, avec GitHub Pages)
 
-`app.py` est prêt pour le développement local (`debug=True`). Pour une mise
-en ligne réelle (hébergement chez un prestataire), il faudra utiliser un
-serveur de production comme `gunicorn`, et désactiver le mode `debug`. Cette
-étape n'est pas couverte par ce projet de départ.
+Le site n'ayant ni formulaire ni base de données, il est converti en pages
+HTML statiques puis hébergé gratuitement sur GitHub Pages.
+
+- `freeze.py` génère le site statique dans le dossier `build/` (avec
+  [Frozen-Flask](https://frozen-flask.readthedocs.io/)). Pour tester en
+  local :
+
+  ```bash
+  python freeze.py
+  cd build && python -m http.server 8000
+  ```
+
+  Le site s'affiche alors sur `http://127.0.0.1:8000`.
+
+- À chaque `git push` sur `main`, le workflow GitHub Actions
+  `.github/workflows/deploy.yml` régénère automatiquement le site et le
+  publie sur GitHub Pages : pas besoin de lancer `freeze.py` à la main avant
+  de pousser.
+
+- Pour activer GitHub Pages (une seule fois) : sur GitHub, aller dans
+  **Settings → Pages**, et choisir **Source : GitHub Actions**.
+
+- Pour connecter un nom de domaine personnalisé : ajouter un fichier
+  `CNAME` à la racine du projet contenant le nom de domaine (ex.
+  `cirim-conseil.com`), configurer les enregistrements DNS chez le
+  registrar du domaine, puis renseigner le domaine dans **Settings → Pages
+  → Custom domain**.

@@ -1,0 +1,57 @@
+name: Déployer le site sur GitHub Pages
+
+# Se déclenche automatiquement à chaque mise à jour de la branche main,
+# ou manuellement depuis l'onglet "Actions" de GitHub.
+on:
+  push:
+    branches: ["main"]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Récupérer le code
+        uses: actions/checkout@v4
+
+      - name: Installer Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Installer les dépendances
+        run: pip install -r requirements.txt
+
+      - name: Générer le site statique
+        run: python freeze.py
+
+      - name: Préparer le fichier CNAME (nom de domaine personnalisé)
+        run: |
+          if [ -f "CNAME" ]; then
+            cp CNAME build/CNAME
+          fi
+
+      - name: Empaqueter le site pour GitHub Pages
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: build
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Publier sur GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

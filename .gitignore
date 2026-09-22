@@ -17,3 +17,7 @@ __pycache__/
 
 # Fichiers système
 .DS_Store
+
+# Site statique généré par freeze.py (régénéré automatiquement par
+# GitHub Actions à chaque mise en ligne, inutile de le committer)
+build/
