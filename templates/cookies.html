@@ -1,0 +1,60 @@
+<!--
+    cookies.html — Politique de cookies.
+    Le site n'utilise aucun cookie : cette page l'explique simplement,
+    ce qui justifie l'absence de bannière de consentement.
+-->
+{% extends "base.html" %}
+
+{% block titre %}Politique de cookies — {{ coord.nom_entreprise }}{% endblock %}
+
+{% block contenu %}
+
+<section class="section">
+    <div class="conteneur conteneur-etroit page-legale">
+        <h1>Politique de cookies</h1>
+        <p class="intro-page">Dernière mise à jour : 22 septembre 2026</p>
+
+        <h2>1. Qu'est-ce qu'un cookie ?</h2>
+        <p>
+            Un cookie est un petit fichier déposé sur votre appareil lors de
+            la visite d'un site web, généralement utilisé pour mémoriser vos
+            préférences, vous reconnaître d'une visite à l'autre, ou mesurer
+            l'audience du site (statistiques de visite, publicité ciblée…).
+        </p>
+
+        <h2>2. Ce site n'utilise aucun cookie</h2>
+        <p>
+            Le site de {{ coord.nom_entreprise }} est un site vitrine
+            purement informatif, sans compte utilisateur, sans panier, sans
+            outil de mesure d'audience (type Google Analytics) et sans
+            publicité. Il ne dépose donc <strong>aucun cookie</strong>, qu'il
+            soit technique, statistique ou publicitaire, et n'utilise aucun
+            autre traceur (stockage local, pixel de suivi, etc.).
+        </p>
+
+        <h2>3. Pourquoi il n'y a pas de bandeau de consentement</h2>
+        <p>
+            Un bandeau demandant votre consentement n'est nécessaire que
+            lorsqu'un site dépose des cookies non strictement indispensables
+            à son fonctionnement (mesure d'audience, publicité…). Comme ce
+            site n'en dépose aucun, aucun consentement n'est requis pour le
+            moment.
+        </p>
+
+        <h2>4. Si cela venait à changer</h2>
+        <p>
+            Si {{ coord.nom_entreprise }} décidait à l'avenir d'intégrer un
+            outil de mesure d'audience ou tout autre service déposant des
+            cookies, cette page serait mise à jour en conséquence et un
+            bandeau de consentement approprié serait alors mis en place
+            avant tout dépôt de cookie non essentiel.
+        </p>
+
+        <p>
+            Pour toute question, vous pouvez nous écrire à
+            <a href="mailto:{{ coord.email }}">{{ coord.email }}</a>.
+        </p>
+    </div>
+</section>
+
+{% endblock %}

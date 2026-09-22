@@ -1,0 +1,109 @@
+<!--
+    cgu.html — Conditions Générales d'Utilisation, avec mentions légales
+    intégrées (éditeur, hébergeur) : pratique courante pour un petit site
+    vitrine plutôt que de multiplier les pages.
+-->
+{% extends "base.html" %}
+
+{% block titre %}Conditions générales d'utilisation — {{ coord.nom_entreprise }}{% endblock %}
+
+{% block contenu %}
+
+<section class="section">
+    <div class="conteneur conteneur-etroit page-legale">
+        <h1>Conditions générales d'utilisation</h1>
+        <p class="intro-page">Dernière mise à jour : 22 septembre 2026</p>
+
+        <h2>1. Objet</h2>
+        <p>
+            Les présentes conditions générales d'utilisation (CGU) régissent
+            l'accès et l'utilisation du site vitrine de
+            {{ coord.nom_entreprise }}, accessible à l'adresse de ce site.
+            En consultant ce site, vous acceptez les présentes CGU sans
+            réserve.
+        </p>
+
+        <h2>2. Éditeur du site</h2>
+        <p>
+            <strong>Nom commercial :</strong> {{ coord.nom_entreprise }}<br>
+            <strong>Dénomination :</strong> {{ coord.nom_complet }}<br>
+            <strong>Forme juridique :</strong> Entreprise individuelle<br>
+            <strong>Responsable de publication :</strong> {{ coord.fondateur }}<br>
+            <strong>Adresse :</strong> {{ coord.adresse }}<br>
+            <strong>Téléphone :</strong>
+            <a href="tel:{{ coord.telephone_lien }}">{{ coord.telephone }}</a><br>
+            <strong>E-mail :</strong>
+            <a href="mailto:{{ coord.email }}">{{ coord.email }}</a>
+        </p>
+
+        <h2>3. Hébergement</h2>
+        <p>
+            Le site est hébergé par [nom et adresse de l'hébergeur à
+            compléter lors de la mise en ligne définitive du site].
+        </p>
+
+        <h2>4. Propriété intellectuelle</h2>
+        <p>
+            L'ensemble des contenus présents sur ce site (textes, logo,
+            photographies, mise en page) est la propriété de
+            {{ coord.nom_entreprise }}, sauf mention contraire, et est
+            protégé par le droit de la propriété intellectuelle. Toute
+            reproduction, représentation, modification ou diffusion totale
+            ou partielle de ces contenus, sans autorisation écrite
+            préalable, est interdite.
+        </p>
+
+        <h2>5. Utilisation du site</h2>
+        <p>
+            Ce site a une vocation purement informative : il présente
+            {{ coord.nom_entreprise }}, ses services et ses coordonnées. Vous
+            vous engagez à l'utiliser de manière loyale, conforme à sa
+            destination et à la réglementation en vigueur, et à ne pas
+            porter atteinte à son bon fonctionnement ou à sa sécurité.
+        </p>
+
+        <h2>6. Liens vers des services tiers</h2>
+        <p>
+            La page Contact propose des liens directs vers des services
+            tiers (application téléphone, WhatsApp, messagerie e-mail).
+            Ces services sont exploités par des tiers indépendants de
+            {{ coord.nom_entreprise }}, qui n'est pas responsable de leur
+            contenu, de leur disponibilité ni de leurs propres conditions
+            d'utilisation.
+        </p>
+
+        <h2>7. Responsabilité</h2>
+        <p>
+            {{ coord.nom_entreprise }} s'efforce d'assurer l'exactitude des
+            informations diffusées sur ce site, sans garantir qu'elles
+            soient exemptes d'erreur ou parfaitement à jour.
+            {{ coord.nom_entreprise }} ne saurait être tenue responsable des
+            dommages directs ou indirects résultant de l'utilisation du
+            site ou de l'impossibilité d'y accéder.
+        </p>
+
+        <h2>8. Disponibilité du site</h2>
+        <p>
+            {{ coord.nom_entreprise }} met tout en œuvre pour assurer
+            l'accessibilité du site, mais ne garantit pas une disponibilité
+            continue et pourra interrompre l'accès, notamment pour des
+            raisons de maintenance, sans préavis ni indemnité.
+        </p>
+
+        <h2>9. Modification des CGU</h2>
+        <p>
+            {{ coord.nom_entreprise }} se réserve le droit de modifier les
+            présentes CGU à tout moment. La version applicable est celle en
+            ligne au moment de votre visite.
+        </p>
+
+        <h2>10. Droit applicable et juridiction compétente</h2>
+        <p>
+            Les présentes CGU sont soumises au droit malien. En cas de
+            litige, et à défaut de résolution amiable, les tribunaux de
+            Bamako (Mali) seront seuls compétents.
+        </p>
+    </div>
+</section>
+
+{% endblock %}

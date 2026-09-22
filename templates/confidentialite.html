@@ -1,0 +1,96 @@
+<!--
+    confidentialite.html — Politique de confidentialité.
+    Le site n'a ni formulaire ni base de données : cette page explique
+    honnêtement qu'aucune donnée n'est collectée par le site lui-même,
+    et ce qu'il se passe quand un visiteur utilise les liens de contact.
+-->
+{% extends "base.html" %}
+
+{% block titre %}Politique de confidentialité — {{ coord.nom_entreprise }}{% endblock %}
+
+{% block contenu %}
+
+<section class="section">
+    <div class="conteneur conteneur-etroit page-legale">
+        <h1>Politique de confidentialité</h1>
+        <p class="intro-page">Dernière mise à jour : 22 septembre 2026</p>
+
+        <h2>1. Qui est responsable de vos données ?</h2>
+        <p>
+            Le responsable du présent site est {{ coord.fondateur }}, exerçant sous le
+            nom commercial {{ coord.nom_entreprise }} ({{ coord.nom_complet }}),
+            entreprise individuelle domiciliée à {{ coord.adresse }}.
+            Pour toute question relative à cette politique, vous pouvez le
+            contacter par e-mail à
+            <a href="mailto:{{ coord.email }}">{{ coord.email }}</a>
+            ou par téléphone au
+            <a href="tel:{{ coord.telephone_lien }}">{{ coord.telephone }}</a>.
+        </p>
+
+        <h2>2. Aucune donnée n'est collectée par ce site</h2>
+        <p>
+            Ce site est un site vitrine purement informatif : il ne contient
+            aucun formulaire, aucun espace de connexion, aucune base de
+            données et n'installe aucun cookie (voir notre
+            <a href="{{ url_for('cookies') }}">politique de cookies</a>).
+            Aucune donnée personnelle n'est donc enregistrée, stockée ou
+            transmise par le site lui-même lors de votre navigation.
+        </p>
+
+        <h2>3. Quand vous nous contactez</h2>
+        <p>
+            La page <a href="{{ url_for('contact') }}">Contact</a> propose des
+            liens directs vers votre téléphone, WhatsApp et votre messagerie
+            e-mail. En cliquant sur l'un de ces liens, c'est l'application de
+            votre appareil (téléphone, WhatsApp, client mail) qui s'ouvre et
+            transmet votre message directement à {{ coord.nom_entreprise }} :
+            le site n'intervient à aucun moment dans cet échange et n'en
+            conserve aucune copie.
+        </p>
+        <p>
+            Les informations que vous nous communiquez de cette manière
+            (par exemple votre nom, votre numéro de téléphone ou le contenu
+            de votre message) sont ensuite traitées par
+            {{ coord.nom_entreprise }} dans le seul but de répondre à votre
+            demande et, le cas échéant, de gérer notre relation commerciale.
+            Elles ne sont ni cédées ni vendues à des tiers, et ne sont
+            utilisées à aucune fin de prospection sans votre accord.
+        </p>
+
+        <h2>4. Journaux techniques d'hébergement</h2>
+        <p>
+            Comme tout site web, l'hébergeur qui met ce site en ligne peut
+            enregistrer automatiquement des données techniques de connexion
+            (adresse IP, date et heure de visite, type de navigateur) à des
+            fins de sécurité et de bon fonctionnement du service. Ces
+            journaux sont gérés par l'hébergeur, ne sont pas exploités par
+            {{ coord.nom_entreprise }} à d'autres fins, et sont conservés
+            uniquement le temps nécessaire à ces besoins techniques.
+        </p>
+
+        <h2>5. Vos droits</h2>
+        <p>
+            Conformément à la loi malienne n°2013-015 du 21 mai 2013 portant
+            protection des données à caractère personnel, vous disposez d'un
+            droit d'accès, de rectification, d'opposition et de suppression
+            des données personnelles vous concernant que
+            {{ coord.nom_entreprise }} pourrait détenir à la suite d'un
+            échange direct avec vous (appel, WhatsApp, e-mail). Vous pouvez
+            exercer ces droits à tout moment en écrivant à
+            <a href="mailto:{{ coord.email }}">{{ coord.email }}</a>.
+            Si vous estimez que vos droits ne sont pas respectés, vous pouvez
+            également saisir l'Autorité de Protection des Données à
+            Caractère Personnel du Mali (APDP-Mali).
+        </p>
+
+        <h2>6. Modifications de cette politique</h2>
+        <p>
+            Cette politique de confidentialité peut être mise à jour,
+            notamment si le site venait à évoluer (ajout d'un formulaire,
+            d'outils de mesure d'audience, etc.). La date de dernière mise à
+            jour figure en haut de cette page.
+        </p>
+    </div>
+</section>
+
+{% endblock %}

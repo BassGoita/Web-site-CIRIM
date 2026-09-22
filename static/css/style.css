@@ -317,11 +317,31 @@ a:hover {
     color: #ffffff;
 }
 
+.liens-legaux {
+    text-align: center;
+    font-size: 0.85rem;
+    margin: 20px 0 0;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 6px 18px;
+}
+
+.liens-legaux a {
+    color: #cbd5e1;
+}
+
 .copyright {
     text-align: center;
     font-size: 0.85rem;
-    margin: 25px 0 0;
+    margin: 15px 0 0;
     color: #8fa1b8;
+}
+
+/* Pages légales (confidentialité, CGU, cookies) : espacement des titres */
+.page-legale h2 {
+    margin-top: 40px;
+    font-size: 1.2rem;
 }
 
 

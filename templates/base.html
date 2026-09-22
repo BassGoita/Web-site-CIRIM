@@ -67,6 +67,11 @@
                 {{ coord.adresse }}
             </div>
         </div>
+        <p class="liens-legaux">
+            <a href="{{ url_for('confidentialite') }}">Politique de confidentialité</a>
+            <a href="{{ url_for('cgu') }}">Conditions générales d'utilisation</a>
+            <a href="{{ url_for('cookies') }}">Politique de cookies</a>
+        </p>
         <p class="copyright">&copy; {{ coord.nom_entreprise }} : 2026 </p>
     </footer>
 

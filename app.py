@@ -53,6 +53,24 @@ def contact():
     return render_template("contact.html", page_active="contact", coord=COORDONNEES)
 
 
+@app.route("/politique-de-confidentialite")
+def confidentialite():
+    """Politique de confidentialité (mentions RGPD/loi malienne)."""
+    return render_template("confidentialite.html", page_active="confidentialite", coord=COORDONNEES)
+
+
+@app.route("/conditions-generales-utilisation")
+def cgu():
+    """Conditions générales d'utilisation (avec mentions légales)."""
+    return render_template("cgu.html", page_active="cgu", coord=COORDONNEES)
+
+
+@app.route("/politique-de-cookies")
+def cookies():
+    """Politique de cookies : le site n'en utilise aucun."""
+    return render_template("cookies.html", page_active="cookies", coord=COORDONNEES)
+
+
 # Ce bloc ne s'exécute que si on lance directement "python app.py"
 # (et pas si le fichier est importé ailleurs).
 if __name__ == "__main__":
