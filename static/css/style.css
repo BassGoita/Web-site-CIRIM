@@ -244,6 +244,31 @@ a:hover {
     text-align: center;
 }
 
+/* Page À propos : carte de certification */
+.carte-certification {
+    margin-top: 25px;
+    background-color: var(--couleur-fond-alt);
+    border-left: 4px solid var(--couleur-accent);
+    border-radius: 4px;
+    padding: 25px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 25px;
+    flex-wrap: wrap;
+}
+
+.carte-certification h3 {
+    margin: 0 0 8px;
+    font-size: 1.1rem;
+}
+
+.details-certification {
+    margin: 0;
+    color: #444;
+    font-size: 0.95rem;
+}
+
 /* Page Services : liste détaillée */
 .intro-page {
     font-size: 1.05rem;
