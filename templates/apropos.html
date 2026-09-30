@@ -83,7 +83,7 @@
     <div class="conteneur conteneur-etroit">
         <h2>Certifications</h2>
         <div class="carte-certification">
-            <div>
+            <div class="texte-certification">
                 <h3>Acquérir des bases en prévention des risques professionnels</h3>
                 <p class="details-certification">
                     Attestation de réussite délivrée par l'INRS (Institut National
@@ -92,9 +92,14 @@
                     santé, comprendre l'accident du travail, participer à
                     l'évaluation des risques professionnels.
                 </p>
+                <a class="bouton" href="{{ url_for('static', filename='documents/attestation-inrs-prevention-risques.pdf') }}" target="_blank" rel="noopener">
+                    Voir le PDF
+                </a>
             </div>
-            <a class="bouton" href="{{ url_for('static', filename='documents/attestation-inrs-prevention-risques.pdf') }}" target="_blank" rel="noopener">
-                Voir l'attestation
+            <a class="apercu-certification-lien" href="{{ url_for('static', filename='documents/attestation-inrs-prevention-risques.pdf') }}" target="_blank" rel="noopener">
+                <img class="apercu-certification"
+                     src="{{ url_for('static', filename='img/attestation-inrs-apercu.jpg') }}"
+                     alt="Attestation de réussite INRS - Acquérir des bases en prévention des risques professionnels - {{ coord.fondateur }}">
             </a>
         </div>
     </div>

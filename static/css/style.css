@@ -244,7 +244,7 @@ a:hover {
     text-align: center;
 }
 
-/* Page À propos : carte de certification */
+/* Page À propos : carte de certification (texte à gauche, aperçu du PDF à droite) */
 .carte-certification {
     margin-top: 25px;
     background-color: var(--couleur-fond-alt);
@@ -252,10 +252,12 @@ a:hover {
     border-radius: 4px;
     padding: 25px 30px;
     display: flex;
-    justify-content: space-between;
     align-items: center;
-    gap: 25px;
-    flex-wrap: wrap;
+    gap: 30px;
+}
+
+.texte-certification {
+    flex: 1;
 }
 
 .carte-certification h3 {
@@ -264,9 +266,22 @@ a:hover {
 }
 
 .details-certification {
-    margin: 0;
+    margin: 0 0 18px;
     color: #444;
     font-size: 0.95rem;
+}
+
+.apercu-certification-lien {
+    flex-shrink: 0;
+    display: block;
+}
+
+.apercu-certification {
+    width: 150px;
+    border: 1px solid #dde3ea;
+    border-radius: 4px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+    display: block;
 }
 
 /* Page Services : liste détaillée */
@@ -435,6 +450,22 @@ a:hover {
         width: 100%;
         max-width: 320px;
         margin: 0 auto;
+    }
+
+    /* La carte de certification s'empile aussi sur mobile */
+    .carte-certification {
+        flex-direction: column;
+        align-items: stretch;
+        text-align: center;
+    }
+
+    .apercu-certification-lien {
+        align-self: center;
+    }
+
+    .apercu-certification {
+        width: 100%;
+        max-width: 260px;
     }
 
     /* La galerie passe sur une seule colonne */
