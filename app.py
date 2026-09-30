@@ -24,7 +24,7 @@ COORDONNEES = {
     "telephone": "+223 71 24 09 19",
     "telephone_lien": "+33765736364",  # format international pour les liens cliquables
     "whatsapp_lien": "33765736364",    # format attendu par wa.me (sans le +)
-    "email": "goitasekouamadou@gmail.com",
+    "email": "sekouamadougoita@cirim-mali.com",
     "adresse": "Bamako, Mali",
 }
 
